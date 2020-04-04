@@ -1,6 +1,9 @@
 {
   "name": "boilerplate",
   "version": "1.0.0",
+  "engines": {
+    "yarn": "1.x"
+  },
   "main": "index.js",
   "author": "AnduMekon <anduabe@yahoo.com>",
   "license": "MIT",
