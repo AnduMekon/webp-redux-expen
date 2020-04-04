@@ -5,7 +5,7 @@ import './styles/styles.scss';
 
 class IndestionAPP extends React.Component {
     render() {
-
+  
         return (
             <div>
                 <Header />
@@ -45,7 +45,7 @@ class Options extends React.Component {
     return (
 
          <div>
-            this is Option
+            this is Option 
          </div>
     )
     }
