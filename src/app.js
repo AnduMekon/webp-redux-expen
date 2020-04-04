@@ -3,80 +3,74 @@ import ReactDOM from 'react-dom';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
-class IndestionAPP extends React.Component {
-    
+class IndecisionApp extends React.Component {
     render() {
-            const title = 'Indecision';
-            const subtitle = 'Put your life in the hand of a computer';
-            
-        return (
-            <div>
-                <Header title = {title} subtitle = {subtitle} />
-                <Action />
-                <Options />
-                <Option />
-                <AddOption />
-                
-
-            
-            </div>
-        )
+      const title = 'Indecision';
+      const subtitle = 'Put your life in the hands of a computer';
+      const options = ['Thing one', 'Thing two', 'Thing four'];
+  
+      return (
+        <div>
+          <Header title={title} subtitle={subtitle} />
+          <Action />
+          <Options options={options} />
+          <AddOption />
+        </div>
+      );
     }
-}
-class Header extends React.Component {
+  }
+  
+  class Header extends React.Component {
     render() {
-
-        return (
-            <div>
-                <h1>{this.props.title}</h1>
-                <h2>{this.props.subtitle}</h2>
-             
-            </div>
-        )
+      return (
+        <div>
+          <h1>{this.props.title}</h1>
+          <h2>{this.props.subtitle}</h2>
+        </div>
+      );
     }
-}
-class Action extends React.Component {
-
+  }
+  
+  class Action extends React.Component {
     render() {
-
-        return (
-            <button> What should I do?</button>
-        )
+      return (
+        <div>
+          <button>What should I do?</button>
+        </div>
+      );
     }
-}
-
-class Options extends React.Component {
-
+  }
+  
+  class Options extends React.Component {
     render() {
-    return (
-
-         <div>
-            this is Options component 
-            <Option />
-         </div>
-    )
+      return (
+        <div>
+          {
+            this.props.options.map((option) => <Option key={option} optionText={option} />)
+          }
+        </div>
+      );
     }
-}
-class Option extends React.Component{
+  }
+  
+  class Option extends React.Component {
     render() {
-        return (
-            <div>
-            this is Option!
-            </div>
-        )
-
+      return (
+        <div>
+          {this.props.optionText}
+        </div>
+      );
     }
-
-}
-class AddOption extends React.Component {
+  }
+  
+  class AddOption extends React.Component {
     render() {
-        return (
-            <div>
-                This is AddOption
-
-            </div>
-        )
+      return (
+        <div>
+          AddOption component here
+        </div>
+      );
     }
-}
-
-ReactDOM.render(<IndestionAPP />, document.getElementById('app'));
+  }
+  
+  ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
