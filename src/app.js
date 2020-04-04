@@ -11,6 +11,7 @@ class IndestionAPP extends React.Component {
                 <Header />
                 <Action />
                 <Options />
+                <Option />
                 <AddOption />
                 
 
@@ -24,7 +25,7 @@ class Header extends React.Component {
 
         return (
             <div>
-                <p> This is me Andualem</p>
+                <p> This is header</p>
             </div>
         )
     }
@@ -45,10 +46,21 @@ class Options extends React.Component {
     return (
 
          <div>
-            this is Option 
+            this is Options component 
          </div>
     )
     }
+}
+class Option extends React.Component{
+    render() {
+        return (
+            <div>
+            this is Option!
+            </div>
+        )
+
+    }
+
 }
 class AddOption extends React.Component {
     render() {
