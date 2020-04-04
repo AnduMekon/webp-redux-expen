@@ -1,5 +1,5 @@
 node_modules
-package-json.lock
-yarn.lock
-bundle.js
-.babelrc
+public/boundle.js
+public/boundle.js.map
+public/styles.css
+public/styles.css.map
