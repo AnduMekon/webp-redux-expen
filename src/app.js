@@ -24,7 +24,7 @@ class Header extends React.Component {
 
         return (
             <div>
-                <p> this is the Add class</p>
+                <p> This is me Andualem</p>
             </div>
         )
     }
