@@ -15,6 +15,7 @@ class IndecisionApp extends React.Component {
           <Action />
           <Options options={options} />
           <AddOption />
+          <Counter />
         </div>
       );
     }
@@ -72,5 +73,15 @@ class IndecisionApp extends React.Component {
       );
     }
   }
-  
+  class Counter extends React.Component {
+
+    render() {
+        return (
+            <div>
+            <p>Counter:0</p>
+            </div>
+        )
+    }
+  }
+
   ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
