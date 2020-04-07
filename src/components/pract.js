@@ -1,51 +1,26 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
+
 class IndecisionApp extends React.Component {
     render() {
-      const title = 'የምግብ ማኖ';
-      const subtitle = 'የሚፈልጉትን አየነት ምግብ ይምረጡ!';
-      const options = ['የመጀመሪያ ምርጫ', 'ሁለትኛ ምርጫ', 'ሶስተኛ ምርጫ'];
+      const title = 'Indecision';
+      const subtitle = 'Put your life in the hands of a computer';
+      const options = ['Thing one', 'Thing two', 'Thing four'];
   
       return (
         <div>
-          <Me />
           <Header title={title} subtitle={subtitle} />
           <Action />
           <Options options={options} />
           <AddOption />
-          <Me />
-          <MyForm />
-          
+          <Counter />
         </div>
       );
     }
   }
-  class MyForm extends React.Component {
-    render() {
-      return (
-        <form>
-          <h1>Hello</h1>
-          <p>Enter your name:</p>
-          <input style={{backgroundColor: "lightblue"}}
-            type="text"
-          />
-        </form>
-      );
-    }
-  }
-  class Me extends React.Component {
-    render() {
-      return (
-        <div>
-          <h1> this is me</h1>
-          <h1 style={{backgroundColor: "lightblue"}}>የምግብ ማኖ!</h1>
-        </div>
-      );
-    }
-  }
+  
   class Header extends React.Component {
     render() {
       return (
@@ -58,27 +33,19 @@ class IndecisionApp extends React.Component {
   }
   
   class Action extends React.Component {
-  handlePick() {
-    alert ('እውይ ተጫኖኝ');
-  }
-  
     render() {
       return (
         <div>
-          <button onClick={this.handlePick}>የቱን መምረጥ ይፈልጋሉ? test</button>
+          <button>What should I do?</button>
         </div>
       );
     }
   }
   
   class Options extends React.Component {
-    handleRemoveAll(){
-      alert('እርግጠኛ ኖዎት ማጥፋት ይፈልጋሉ? ')
-    }
     render() {
       return (
         <div>
-        <button onClick={this.handleRemoveAll}>ለማጥፋት</button>
           {
             this.props.options.map((option) => <Option key={option} optionText={option} />)
           }
@@ -91,7 +58,7 @@ class IndecisionApp extends React.Component {
     render() {
       return (
         <div>
-        *  {this.props.optionText}
+          {this.props.optionText}
         </div>
       );
     }
@@ -106,5 +73,37 @@ class IndecisionApp extends React.Component {
       );
     }
   }
-  
+  class Counter extends React.Component {
+      constructor(props) {
+          super(props);
+          this.handleAdd = this.handleAdd.bind(this);
+          this.handleMin = this.handleMin.bind(this);
+          this.handleRest = this.handleRest.bind(this);
+          this.state = {
+              count: 0
+          }
+      }
+      handleAdd() {
+        alert('adding')
+      }
+      handleMin() {
+          alert('subtracting')
+
+      }
+      handleRest() {
+          alert('rest')
+      }
+
+    render() {
+        return (
+            <div>
+            <p>Counter:{this.state}</p>
+            <button onClick={this.handleAdd}>+</button>
+            <button onClick={this.handleMin}>-</button>
+            <button onClick={this.handleRest}>Rest</button>
+            </div>
+        )
+    }
+  }
+
   ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
