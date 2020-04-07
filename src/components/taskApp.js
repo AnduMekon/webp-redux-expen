@@ -5,7 +5,8 @@ import Header from './Header';
 import Options from './Options';
 import OptionModal from './OptionModal';
 
-export default class IndecisionApp extends React.Component {
+
+export default class TaskApp extends React.Component {
   state = {
     options: [],
     selectedOption: undefined
@@ -61,31 +62,35 @@ export default class IndecisionApp extends React.Component {
     console.log('componentWillUnmount');
   }
   render() {
-    const subtitle = 'Put your life in the hands of a computer';
+    const subtitle = 'List your tasks to get things off your mind.';
 
     return (
       <div>
+        <div className='container'>
         <Header subtitle={subtitle} />
-        <div className="container">
-          <Action
-            hasOptions={this.state.options.length > 0}
-            handlePick={this.handlePick}
-          />
-          <div className="widget">
-            <Options
-              options={this.state.options}
-              handleDeleteOptions={this.handleDeleteOptions}
-              handleDeleteOption={this.handleDeleteOption}
-            />
-            <AddOption
+        <Action
+          hasOptions={this.state.options.length > 0}
+          handlePick={this.handlePick}
+        />
+              <div className="widget">
+        
+                <Options
+                options={this.state.options}
+                handleDeleteOptions={this.handleDeleteOptions}
+                handleDeleteOption={this.handleDeleteOption}
+                />
+              <AddOption
               handleAddOption={this.handleAddOption}
-            />
-          </div>
+              />
+             </div>
+       
         </div>
+        
         <OptionModal
           selectedOption={this.state.selectedOption}
           handleClearSelectedOption={this.handleClearSelectedOption}
         />
+     
       </div>
     );
   }
