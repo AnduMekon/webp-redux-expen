@@ -74,11 +74,33 @@ class IndecisionApp extends React.Component {
     }
   }
   class Counter extends React.Component {
+      constructor(props) {
+          super(pros);
+          this.handleAdd = this.handleAdd.bind(this);
+          this.handleMin = this.handleMin.bind(this);
+          this.handleRest = this.handleRest.bind(this);
+          this.state = {
+              count: 0
+          }
+      }
+      handleAdd() {
+        alert('adding')
+      }
+      handleMin() {
+          alert('subtracting')
+
+      }
+      handleRest() {
+          alert('rest')
+      }
 
     render() {
         return (
             <div>
-            <p>Counter:0</p>
+            <p>Counter:{this.state}</p>
+            <button onClick={this.handleAdd}>+</button>
+            <button onClick={this.handleMin}>-</button>
+            <button onClick={this.handleRest}>Rest</button>
             </div>
         )
     }
