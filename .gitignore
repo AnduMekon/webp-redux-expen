@@ -1,2 +1,5 @@
 node_modules
-public/dist/
+public/boundle.js
+public/boundle.js.map
+public/styles.css
+public/styles.css.map
